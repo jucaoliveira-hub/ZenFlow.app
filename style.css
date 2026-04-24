@@ -1,0 +1,129 @@
+:root {
+    --bg: #ffffff;
+    --text: #333333;
+    --blue: #2d5aed;
+    --green: #27ae60;
+    --gray: #f4f4f9;
+    --border: #e0e0e0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+#motivational-quote { font-style: italic; color: #666; margin-top: 5px; }
+
+.stats-timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pomodoro-card {
+    background: var(--gray);
+    padding: 15px;
+    border-radius: 12px;
+    min-width: 200px;
+}
+
+#timer-display { font-size: 2rem; font-weight: bold; display: block; }
+
+.smart-input {
+    background: var(--gray);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 860px;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 97%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.input-details {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.input-details select, .input-details input, #add-task-btn {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+#add-task-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.filters { margin-bottom: 20px; }
+.filters button {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.column {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+
+.highlight { background: #eef4ff; border: 2px solid var(--blue); }
+
+.task-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--blue);
+}
+
+.task-card.pessoal { border-left-color: var(--green); }
+.task-card.done { opacity: 0.5; text-decoration: line-through; }
+
+.task-card h4 { margin: 0 0 5px 0; }
+.task-card p { font-size: 0.85rem; color: #666; margin: 5px 0; }
+
+.energy-tag { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; padding: 2px 5px; background: #eee; border-radius: 4px; }

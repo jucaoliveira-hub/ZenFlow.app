@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenFlow - Foco e Clareza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hud">
+        <div class="top-bar">
+            <h2 id="current-date"></h2>
+            <p id="motivational-quote">"Carregando foco..."</p>
+        </div>
+
+        <div class="stats-timer">
+            <div class="pomodoro-card">
+                <span id="timer-display">25:00</span>
+                <div class="timer-controls">
+                    <button onclick="startTimer()" id="btn-focus">Focar</button>
+                    <button onclick="pauseTimer()">Pausa</button>
+                    <button onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+            <div class="counters">
+                <div>A Fazer: <span id="count-todo">0</span></div>
+                <div>Em Foco: <span id="count-doing">0</span>/2</div>
+                <div>Feito: <span id="count-done">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="smart-input">
+            <div class="input-group">
+                <input type="text" id="task-name" placeholder="O que precisa ser feito?">
+                <input type="text" id="task-desc" placeholder="Descrição rápida (opcional)">
+            </div>
+            <div class="input-details">
+                <input type="datetime-local" id="task-date">
+                <select id="task-category">
+                    <option value="Trabalho">Trabalho (Azul)</option>
+                    <option value="Pessoal">Pessoal (Verde)</option>
+                </select>
+                <select id="task-energy">
+                    <option value="Baixo">Energia Baixa 🧘</option>
+                    <option value="Médio" selected>Energia Média ⚡</option>
+                    <option value="Alto">Energia Alta 🔥</option>
+                </select>
+                <button id="add-task-btn" onclick="addTask()">Adicionar</button>
+            </div>
+        </section>
+
+        <nav class="filters">
+            <button onclick="filterTasks('Todas')" class="active-filter">Todas</button>
+            <button onclick="filterTasks('Trabalho')">Trabalho</button>
+            <button onclick="filterTasks('Pessoal')">Pessoal</button>
+        </nav>
+
+        <div class="board">
+            <div class="column">
+                <h3>📌 A Fazer</h3>
+                <div id="list-todo" class="task-list"></div>
+            </div>
+            <div class="column highlight">
+                <h3>🔥 Em Foco</h3>
+                <div id="list-doing" class="task-list"></div>
+            </div>
+            <div class="column">
+                <h3>✅ Feito</h3>
+                <div id="list-done" class="task-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <audio id="beep-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
