@@ -49,4 +49,3 @@ O projeto foi construído focado em leveza, performance e acessibilidade, utiliz
 
 **Juca Dolci** - *Business Strategist & AI Builder*
 - **Portfólio:** [jucadolci.netlify.app](https://jucadolci.netlify.app/)
-- **LinkedIn:** [Seu Link do LinkedIn]
